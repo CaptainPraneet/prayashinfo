@@ -1,0 +1,48 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prayashcare
+  namespace: prayashcare
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "12m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - prayashcare.example.com
+        - admin.prayashcare.example.com
+        - api.prayashcare.example.com
+      secretName: prayashcare-tls
+  rules:
+    - host: prayashcare.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prayashcare-frontend
+                port:
+                  number: 80
+    - host: admin.prayashcare.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prayashcare-admin
+                port:
+                  number: 80
+    - host: api.prayashcare.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prayashcare-backend
+                port:
+                  number: 4000

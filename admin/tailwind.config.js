@@ -10,7 +10,11 @@ export default {
         'auto':'repeat(auto-fill, minmax(200px, 1fr))'
       },
       colors:{
-        'primary':'#5F6FFF'
+        'primary': '#3978E8',
+        'secondary': '#625EFF',
+        'navy': '#172B4D',
+        'light-blue': '#EFF5FF',
+        'success': '#10B981'
       }
     },
   },

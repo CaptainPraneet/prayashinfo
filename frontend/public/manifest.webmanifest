@@ -1,0 +1,17 @@
+{
+  "name": "PrayashCare Healthcare Management",
+  "short_name": "PrayashCare",
+  "description": "A modern healthcare management platform for appointments, patient care, and hospital operations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#3978E8",
+  "icons": [
+    {
+      "src": "/brand/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

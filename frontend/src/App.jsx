@@ -10,26 +10,29 @@ import MyAppointment from './pages/MyAppointment'
 import Appointment from './Appointment'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import AIChatbotWidget from './components/AIChatbotWidget'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   return (
-    <div className='mx-4 sm:mx-[10%]'>
-      <ToastContainer />
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/doctors' element={<Doctors />} />
-        <Route path='/doctors/:speciality' element={<Doctors />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/my-profile' element={<MyProfile />} />
-        <Route path='/my-appointments' element={<MyAppointment />} />
-        <Route path='/appointment/:docId' element={<Appointment />} />
-
-      </Routes>
+    <div className='mx-4 sm:mx-[10%] min-h-screen flex flex-col justify-between'>
+      <div>
+        <ToastContainer position="top-right" autoClose={3000} />
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/doctors' element={<Doctors />} />
+          <Route path='/doctors/:speciality' element={<Doctors />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/my-profile' element={<MyProfile />} />
+          <Route path='/my-appointments' element={<MyAppointment />} />
+          <Route path='/appointment/:docId' element={<Appointment />} />
+        </Routes>
+      </div>
+      <AIChatbotWidget />
       <Footer />
     </div>
   )
