@@ -3,17 +3,15 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# Backend package files
+COPY package.json package-lock*.json ./
 
-# Install production dependencies
+# Install dependencies
 RUN npm install --omit=dev
 
-# Copy application source code
+# Copy backend source
 COPY . .
 
-# Backend port
 EXPOSE 4000
 
-# Start backend
 CMD ["node", "server.js"]
